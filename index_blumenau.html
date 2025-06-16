@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visite Blumenau - Seu Guia de Viagem Definitivo</title>
+  <meta name="description"
+    content="Descubra o charme de Blumenau com nosso guia completo de viagem com atrações, experiências culturais, gastronomia e hospedagens.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            blumenau: {
+              wine: '#6D2E46',
+              beige: '#F5F0E1',
+              green: '#588157',
+              dark: '#2E2E2E',
+            },
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    #ty__agent {
+      position: fixed !important;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #6D2E46, #8B4A62);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+
+  <!-- Hero Section -->
+  <section class="relative h-screen overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center parallax"
+      style="background-image: url('https://images.pexels.com/photos/15182749/pexels-photo-15182749.jpeg');">
+      <div class="absolute inset-0 bg-gradient-to-b from-blumenau-dark/60 to-blumenau-dark/80"></div>
+    </div>
+    <div class="relative h-full flex flex-col justify-center items-center text-white text-center px-4 animate-fade-in">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+        <span class="block">Descubra</span>
+        <span class="text-blumenau-wine">Blumenau</span>
+      </h1>
+      <p class="text-xl md:text-2xl max-w-3xl font-light mb-8">
+        Um pedaço da Alemanha no sul do Brasil, com cultura, tradição e beleza natural
+      </p>
+      <button onclick="simpleChatOpen()"
+        class="mt-4 bg-blumenau-wine hover:bg-opacity-90 text-white px-10 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+        Planeje Sua Viagem
+      </button>
+      <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+        <a href="#atracoes" class="text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Atrações -->
+  <section id="atracoes" class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-gradient">Principais Atrações</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Explore a história e a cultura em pontos icônicos de Blumenau
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://fuinessaviagem.com/wp-content/uploads/pexels-alex-vargas-13571279-946x1024.jpg" alt="Vila Germânica" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-blumenau-dark group-hover:text-blumenau-wine transition-colors">
+              Vila Germânica</h3>
+            <p class="text-gray-600">Centro de eventos, lojas, restaurantes e palco da famosa Oktoberfest.</p>
+          </div>
+        </div>
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://scontent.fopo6-1.fna.fbcdn.net/v/t39.30808-6/464091124_27332209793090270_8324887462151093406_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=ohTqzO52Ix0Q7kNvwGmSVB-&_nc_oc=AdkSPK8qQS4uNNom0h6YVWiWFxB20Xs8eqGZyK6Q7MV8I71I_B9J8VFyjyVsymqXUTE9GtUVHOeTTfOpGQgKNvpK&_nc_zt=23&_nc_ht=scontent.fopo6-1.fna&_nc_gid=wZyS6fu9dhzWWSKigyRoSA&oh=00_AfPEToC0K3mCFCHxky9N2asicEHOXQCmL6Dug5dla__dfA&oe=6855B6B5" alt="Museu Hering" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-blumenau-dark group-hover:text-blumenau-wine transition-colors">
+              Fundação Hering</h3>
+            <p class="text-gray-600">Um espaço que conecta o passado e o futuro de Blumenau por meio da moda, da memória e da sustentabilidade.</p>
+          </div>
+        </div>
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.adsttc.com/media/images/60c8/d38a/e1fe/0f01/6557/77cc/newsletter/dsc5170-editar-p.jpg?1623774102" alt="Catedral São Paulo Apóstolo" class="w-full h-full object-cover">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-blumenau-dark group-hover:text-blumenau-wine transition-colors">
+              Catedral São Paulo Apóstolo</h3>
+            <p class="text-gray-600">Cartão-postal da cidade com arquitetura moderna e belos vitrais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiências -->
+  <section id="experiencias" class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center parallax"
+    style="background-image: url('https://scontent.fopo6-1.fna.fbcdn.net/v/t39.30808-6/490541687_3746926178784919_5593536126676253388_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=20EbgGZ9gH0Q7kNvwGxpmkm&_nc_oc=AdlEk79ga8iWSkBcnMbQTxMdWev7T85qOQEDD0TWzcS6tNBFc4nLahXIQ6Q3WySzKPv_tWCVveyitt21DGWfQ0r5&_nc_zt=23&_nc_ht=scontent.fopo6-1.fna&_nc_gid=lyic4xh0rsayj9aN2iZaZw&oh=00_AfO6E6c_ii5OQHWJAZDYOl42nISbxOxuTQGlINIs4pIVXA&oe=6855B4A4');">
+    <div class="absolute inset-0 bg-gradient-to-r from-blumenau-dark/80 to-blumenau-dark/60"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 text-white">Experiências Inesquecíveis</h2>
+      <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+        Viva a cultura e a natureza de Blumenau em atividades para todos os gostos
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+        <div class="mb-6 flex justify-center">
+          <div class="w-20 h-20 rounded-full bg-blumenau-wine flex items-center justify-center shadow-lg">
+            <span class="text-3xl">🍻</span>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-center">Oktoberfest</h3>
+        <p class="text-center text-gray-200">
+          A maior festa alemã das Américas, com música, dança e cerveja.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+        <div class="mb-6 flex justify-center">
+          <div class="w-20 h-20 rounded-full bg-blumenau-wine flex items-center justify-center shadow-lg">
+            <span class="text-3xl">🌳</span>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-center">Trilhas Ecológicas</h3>
+        <p class="text-center text-gray-200">
+          Explore a natureza em parques como Spitzkopf e Serra do Itajaí.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+        <div class="mb-6 flex justify-center">
+          <div class="w-20 h-20 rounded-full bg-blumenau-wine flex items-center justify-center shadow-lg">
+            <span class="text-3xl">🚤</span>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-center">Passeios no Rio</h3>
+        <p class="text-center text-gray-200">
+          Aproveite um passeio pelo Rio Itajaí-Açu com vistas encantadoras da cidade.
+        </p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+        <div class="mb-6 flex justify-center">
+          <div class="w-20 h-20 rounded-full bg-blumenau-wine flex items-center justify-center shadow-lg">
+            <span class="text-3xl">🎭</span>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold mb-3 text-center">Eventos Culturais</h3>
+        <p class="text-center text-gray-200">
+          Participe de festivais, concertos e atividades comunitárias durante todo o ano.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Gastronomia -->
+<section id="gastronomia" class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 text-gradient">Sabores de Blumenau</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Desfrute da rica gastronomia local com influências germânicas e brasileiras
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="flex flex-col bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl">
+        <div class="h-80 overflow-hidden">
+          <img src="https://www.estadao.com.br/resizer/v2/RMQHUUGOVVAMPBBRZ4YI27BD7E.jpeg?quality=80&auth=83bdd46f2ea976e7e33f7eaf4de3d986683e4c368087cd31dcd31abf045f4a7a&width=1075&height=527&focal=2220,1925" alt="Cervejarias Artesanais" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-blumenau-dark">Cervejarias Artesanais</h3>
+          <p class="text-gray-600 mb-6">
+            Blumenau é referência nacional na produção de cervejas artesanais. Conheça locais como Eisenbahn e Container Bier.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl">
+        <div class="h-80 overflow-hidden">
+          <img src="https://www.divvino.com.br/blog/wp-content/uploads/2019/10/o-que-%C3%A9-oktoberfest1.jpg" alt="Culinária Alemã" class="w-full h-full object-cover">
+        </div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3 text-blumenau-dark">Culinária Alemã</h3>
+          <p class="text-gray-600 mb-6">
+            Saboreie pratos típicos como marreco com repolho roxo, eisbein (joelho de porco) e strudel de maçã.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hospedagem -->
+<section id="hospedagem" class="py-24 bg-blumenau-beige">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 text-gradient">Hospedagens em Destaque</h2>
+      <p class="text-xl text-blumenau-dark max-w-3xl mx-auto">
+        Encontre conforto e hospitalidade nos melhores hotéis e pousadas de Blumenau
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/212741962.jpg?k=b2dadbbd33fce87bdba5994778fca6aadece3bbfd596b09b61e735b3b4fe6438&o=" alt="Hotel Himmelblau" class="w-full h-72 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blumenau-dark">Hotel Glória</h3>
+          <p class="text-gray-600">Localização privilegiada e conforto em todos os detalhes.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/140647465.jpg?k=80cb0928991a9daa86c8ff0a801a8e81fc5c9875cd27875f6196375b59b731ea&o=" alt="Plaza Blumenau Hotel" class="w-full h-72 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blumenau-dark">Plaza Blumenau Hotel</h3>
+          <p class="text-gray-600">Conforto e sofisticação no coração da cidade.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transform hover:-translate-y-2">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/167719962.jpg?k=966c6d7d1a12fcb102a3fbb2f5a7f69d971cbb950c6d585ce4910971e8ffd05a&o=" alt="Pousada Vila Germânica" class="w-full h-72 object-cover">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blumenau-dark">Villa do Vale Boutique Hotel</h3>
+          <p class="text-gray-600">Um refúgio sofisticado e íntimo no coração de Blumenau.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 text-gradient">Perguntas Frequentes</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Tire suas dúvidas mais comuns sobre Blumenau
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-6">
+      <div>
+        <h3 class="text-xl font-semibold text-blumenau-dark">Quando visitar Blumenau?</h3>
+        <p class="text-gray-600">A melhor época é entre março e outubro, especialmente em outubro durante a Oktoberfest.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-blumenau-dark">Preciso falar alemão para visitar?</h3>
+        <p class="text-gray-600">Não. Embora a cidade tenha raízes alemãs, o idioma oficial é o português e a maioria das pessoas entende bem os visitantes.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-blumenau-dark">Como chegar a Blumenau?</h3>
+        <p class="text-gray-600">Você pode voar até Navegantes (60km) ou Florianópolis (130km) e seguir de carro ou ônibus.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-gray-600 mb-6 text-lg">Ainda tem dúvidas? Nosso assistente de viagem pode ajudar!</p>
+      <button onclick="simpleChatOpen()"
+        class="bg-blumenau-wine hover:bg-opacity-90 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg pulse-animation">
+        Fale com o Assistente Virtual
+      </button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Chat Script -->
+  <script type="text/javascript">
+    (function(){
+      const tyId = 'ty__agent_src-setup';
+      const el = document.createElement('script');
+      const root = document.getElementsByTagName('script')[0];
+      el.id = tyId;
+      el.src = 'https://guest.agent.trustyou.com/embed/a_o0Vx7KnfK8gn';
+      el.setAttribute('crossorigin', 'anonymous');
+      if(!document.getElementById(tyId)) {
+        root.parentNode.insertBefore(el, root);
+      }
+    })();
+  </script>
+  <script>
+    function simpleChatOpen() {
+      const chatButton = document.querySelector('button[title="Open chat"]');
+      if (chatButton) {
+        chatButton.click();
+      } else {
+        console.warn('Botão do chat não encontrado.');
+      }
+    }
+  </script>
+</body>
+
+</html>

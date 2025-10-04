@@ -1,541 +1,561 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Dubai - Your Ultimate Travel Guide</title>
-    <meta name="description"
-        content="Discover the wonders of Dubai with our comprehensive travel guide featuring attractions, experiences, dining, and accommodations.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        dubai: {
-                            gold: '#D4AF37',
-                            sand: '#E2C9A1',
-                            blue: '#0081C9',
-                            night: '#1E293B',
-                        },
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 1s ease-in-out',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                    },
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visit Dubai - Your Ultimate Travel Guide</title>
+  <meta name="description" content="Discover the wonders of Dubai with our comprehensive travel guide featuring attractions, experiences, dining, and accommodations." />
+
+  <!-- Tailwind (CDN for demo; use CLI/PostCSS in production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Flowbite CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+          colors: {
+            dubai: {
+              gold: '#D4AF37',
+              sand: '#E2C9A1',
+              blue: '#0081C9',
+              night: '#1E293B',
+            },
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+          },
         }
-    </script>
+      }
+    }
+  </script>
 
-    <script language="javascript">
-  window.$_TYagent_ = {mode: 'embedded', startMode: 'minimized', rootElementId: 'ty__agent'};
-    </script>
-    
-    
-    <style>
-      #ty__agent {
-    position: fixed !important;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999; /* Make sure it's on top */
-    border-radius: 16px;
-    overflow: hidden;
-  }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 0px;
-        }
+  <!-- TrustYou Agent config (embedded mode) -->
+  <script>
+    window.$_TYagent_ = { mode: 'embedded', startMode: 'minimized', rootElementId: 'ty__agent' };
+  </script>
 
-        /* Parallax effect */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* Gradient text */
-        .text-gradient {
-            background: linear-gradient(90deg, #D4AF37, #B8860B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Chat widget animations */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-    </style>
+  <style>
+    #ty__agent {
+      position: fixed !important;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    ::-webkit-scrollbar { width: 0px; }
+    .parallax { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+    .text-gradient { background: linear-gradient(90deg, #D4AF37, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    @keyframes pulse { 0% { transform: scale(1) } 50% { transform: scale(1.05) } 100% { transform: scale(1) } }
+    .pulse-animation { animation: pulse 2s infinite; }
+  </style>
 </head>
 
 <body class="font-sans text-gray-800 bg-white">
+  <!-- Hero Section with Parallax -->
+  <section class="relative h-screen overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center parallax" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+      <div class="absolute inset-0 bg-gradient-to-b from-dubai-night/60 to-dubai-night/80"></div>
+    </div>
+    <div class="relative h-full flex flex-col justify-center items-center text-white text-center px-4 animate-fade-in">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+        <span class="block">Discover</span>
+        <span class="text-dubai-gold">Dubai</span>
+      </h1>
+      <p class="text-xl md:text-2xl max-w-3xl font-light mb-8">
+        Experience the city of wonders, where tradition meets innovation
+      </p>
+      <button
+        class="mt-4 bg-dubai-gold hover:bg-opacity-90 text-white px-10 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        data-agent-prompt="Plan my Dubai trip">
+        Plan Your Trip
+      </button>
 
-    <!-- Hero Section with Parallax -->
-    <section class="relative h-screen overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center parallax"
-            style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80');">
-            <div class="absolute inset-0 bg-gradient-to-b from-dubai-night/60 to-dubai-night/80"></div>
+      <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+        <a href="#attractions" class="text-white" aria-label="Scroll to attractions">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Attractions Section -->
+  <section id="attractions" class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16 reveal active">
+        <h2 class="text-4xl font-bold mb-4 text-gradient">Iconic Attractions</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Explore the architectural marvels and breathtaking sights that make Dubai a global destination</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal active">
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://www.visitdubai.com/-/media/gathercontent/poi/b/burj-khalifa/fallback-image/poi-burj-khalifa-3-dtcm-jun-2023.jpg?rev=c7510433089e4a33b1aadc0492dc3da1&cx=0.48&cy=0.38&cw=1556&ch=690" alt="Burj Khalifa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">Burj Khalifa</h3>
+            <p class="text-gray-600">Reach new heights at the world's tallest building with breathtaking views from the observation decks.</p>
+            <a href="#" class="inline-block mt-4 text-dubai-gold font-medium hover:text-dubai-blue transition-colors" data-agent-prompt="Best time to visit Burj Khalifa and ticket tips">Learn more →</a>
+          </div>
         </div>
-        <div
-            class="relative h-full flex flex-col justify-center items-center text-white text-center px-4 animate-fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                <span class="block">Discover</span>
-                <span class="text-dubai-gold">Dubai</span>
-            </h1>
-            <p class="text-xl md:text-2xl max-w-3xl font-light mb-8">
-                Experience the city of wonders, where tradition meets innovation
-            </p>
-            <button onclick="simpleChatOpen()"
-                class="mt-4 bg-dubai-gold hover:bg-opacity-90 text-white px-10 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-                Plan Your Trip
+
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544550581-1bcabf842b77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Palm Jumeirah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">Palm Jumeirah</h3>
+            <p class="text-gray-600">Explore the iconic palm-shaped island featuring luxury hotels, restaurants, and beautiful beaches.</p>
+            <a href="#" class="inline-block mt-4 text-dubai-gold font-medium hover:text-dubai-blue transition-colors" data-agent-prompt="Palm Jumeirah itinerary for half a day">Learn more →</a>
+          </div>
+        </div>
+
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://www.visitdubai.com/-/media/gathercontent/poi/t/the-dubai-mall/fallback-image/the-dubai-mall-poi-shutterstock.jpg?rev=76ad7b9dc8a0410a8c45816dc73c1725&cx=0.64&cy=0.38&cw=1556&ch=690" alt="Dubai Mall" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">Dubai Mall</h3>
+            <p class="text-gray-600">Shop, dine, and be entertained at one of the world's largest malls, home to the Dubai Aquarium.</p>
+            <a href="#" class="inline-block mt-4 text-dubai-gold font-medium hover:text-dubai-blue transition-colors" data-agent-prompt="What to do at Dubai Mall in 2 hours">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences Section with Parallax -->
+  <section id="experiences" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center parallax" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+      <div class="absolute inset-0 bg-gradient-to-r from-dubai-night/80 to-dubai-night/60"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-16 reveal active">
+        <h2 class="text-4xl font-bold mb-4 text-white">Unforgettable Experiences</h2>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">Create memories that will last a lifetime with these must-try Dubai experiences</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal active">
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+          <div class="mb-6 flex justify-center">
+            <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg"><span class="text-3xl">🏜️</span></div>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-center">Desert Safari</h3>
+          <p class="text-center text-gray-200">Experience dune bashing, camel rides, and traditional entertainment under the stars.</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+          <div class="mb-6 flex justify-center">
+            <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg"><span class="text-3xl">🛥️</span></div>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-center">Marina Cruise</h3>
+          <p class="text-center text-gray-200">Sail through Dubai Marina and enjoy stunning views of the city's skyline.</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+          <div class="mb-6 flex justify-center">
+            <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg"><span class="text-3xl">🏊</span></div>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-center">Water Parks</h3>
+          <p class="text-center text-gray-200">Cool off at world-class water parks like Wild Wadi and Aquaventure.</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
+          <div class="mb-6 flex justify-center">
+            <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg"><span class="text-3xl">🛍️</span></div>
+          </div>
+          <h3 class="text-2xl font-bold mb-3 text-center">Gold Souk</h3>
+          <p class="text-center text-gray-200">Explore traditional markets and shop for gold, spices, and souvenirs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dining Section -->
+  <section id="dining" class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16 reveal active">
+        <h2 class="text-4xl font-bold mb-4 text-gradient">Culinary Delights</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Savor the flavors of Dubai's diverse culinary scene, from local Emirati cuisine to international fine dining</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal active">
+        <div class="flex flex-col bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl">
+          <div class="h-80 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fine Dining" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night">Fine Dining</h3>
+            <p class="text-gray-600 mb-6">Experience world-class cuisine at celebrity chef restaurants and iconic venues like At.mosphere in Burj Khalifa and underwater dining at Al Mahara.</p>
+            <button
+              class="bg-dubai-gold hover:bg-opacity-90 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+              data-agent-prompt="Recommend me restaurants">
+              Explore Restaurants
             </button>
-
-            <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-                <a href="#attractions" class="text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Attractions Section -->
-    <section id="attractions" class="py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 reveal active">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Iconic Attractions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Explore the architectural marvels and breathtaking sights that make Dubai a global destination
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal active">
-                <div
-                    class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://www.visitdubai.com/-/media/gathercontent/poi/b/burj-khalifa/fallback-image/poi-burj-khalifa-3-dtcm-jun-2023.jpg?rev=c7510433089e4a33b1aadc0492dc3da1&cx=0.48&cy=0.38&cw=1556&ch=690"
-                            alt="Burj Khalifa"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">
-                            Burj Khalifa</h3>
-                        <p class="text-gray-600">
-                            Reach new heights at the world's tallest building with breathtaking views from the
-                            observation decks.
-                        </p>
-                        <a href="#"
-                            class="inline-block mt-4 text-dubai-gold font-medium hover:text-dubai-blue transition-colors">
-                            Learn more →
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544550581-1bcabf842b77?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                            alt="Palm Jumeirah"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">
-                            Palm Jumeirah</h3>
-                        <p class="text-gray-600">
-                            Explore the iconic palm-shaped island featuring luxury hotels, restaurants, and beautiful
-                            beaches.
-                        </p>
-                        <a href="#"
-                            class="inline-block mt-4 text-dubai-gold font-medium hover:text-dubai-blue transition-colors">
-                            Learn more →
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://www.visitdubai.com/-/media/gathercontent/poi/t/the-dubai-mall/fallback-image/the-dubai-mall-poi-shutterstock.jpg?rev=76ad7b9dc8a0410a8c45816dc73c1725&cx=0.64&cy=0.38&cw=1556&ch=690"
-                            alt="Dubai Mall"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">
-                            Dubai Mall</h3>
-                        <p class="text-gray-600">
-                            Shop, dine, and be entertained at one of the world's largest malls, home to the Dubai
-                            Aquarium.
-                        </p>
-                        <a href="#"
-                            class="inline-block mt-4 text-dubai-gold font-medium hover:text-dubai-blue transition-colors">
-                            Learn more →
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experiences Section with Parallax -->
-    <section id="experiences" class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center parallax"
-            style="background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80');">
-            <div class="absolute inset-0 bg-gradient-to-r from-dubai-night/80 to-dubai-night/60"></div>
+          </div>
         </div>
 
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-16 reveal active">
-                <h2 class="text-4xl font-bold mb-4 text-white">Unforgettable Experiences</h2>
-                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
-                    Create memories that will last a lifetime with these must-try Dubai experiences
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal active">
-                <div
-                    class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
-                    <div class="mb-6 flex justify-center">
-                        <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg">
-                            <span class="text-3xl">🏜️</span>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-center">Desert Safari</h3>
-                    <p class="text-center text-gray-200">
-                        Experience dune bashing, camel rides, and traditional entertainment under the stars.
-                    </p>
-                </div>
-
-                <div
-                    class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
-                    <div class="mb-6 flex justify-center">
-                        <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg">
-                            <span class="text-3xl">🛥️</span>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-center">Marina Cruise</h3>
-                    <p class="text-center text-gray-200">
-                        Sail through Dubai Marina and enjoy stunning views of the city's skyline.
-                    </p>
-                </div>
-
-                <div
-                    class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
-                    <div class="mb-6 flex justify-center">
-                        <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg">
-                            <span class="text-3xl">🏊</span>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-center">Water Parks</h3>
-                    <p class="text-center text-gray-200">
-                        Cool off at world-class water parks like Wild Wadi and Aquaventure.
-                    </p>
-                </div>
-
-                <div
-                    class="bg-white/10 backdrop-blur-md rounded-xl p-8 text-white border border-white/20 transition-all duration-300 hover:bg-white/20 hover:shadow-xl">
-                    <div class="mb-6 flex justify-center">
-                        <div class="w-20 h-20 rounded-full bg-dubai-gold flex items-center justify-center shadow-lg">
-                            <span class="text-3xl">🛍️</span>
-                        </div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-3 text-center">Gold Souk</h3>
-                    <p class="text-center text-gray-200">
-                        Explore traditional markets and shop for gold, spices, and souvenirs.
-                    </p>
-                </div>
-            </div>
+        <div class="flex flex-col bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl">
+          <div class="h-80 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Local Cuisine" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night">Local Cuisine</h3>
+            <p class="text-gray-600 mb-6">Discover authentic Emirati flavors and Arabic specialties at traditional restaurants and food festivals. Don't miss trying Al Machboos and Luqaimat.</p>
+            <button
+              class="bg-dubai-gold hover:bg-opacity-90 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+              data-agent-prompt="Best places for traditional Emirati food">
+              Discover Local Food
+            </button>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Dining Section -->
-    <section id="dining" class="py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 reveal active">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Culinary Delights</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Savor the flavors of Dubai's diverse culinary scene, from local Emirati cuisine to international
-                    fine dining
-                </p>
+  <!-- Accommodation Section -->
+  <section id="accommodation" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16 reveal active">
+        <h2 class="text-4xl font-bold mb-4 text-gradient">Luxury Accommodations</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Rest in style at Dubai's world-renowned hotels and resorts, offering unparalleled luxury and service</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal active">
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Burj Al Arab" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">Burj Al Arab</h3>
+            <p class="text-gray-600 mb-4">The iconic sail-shaped 7-star hotel offering unparalleled luxury and service.</p>
+            <div class="flex items-center text-dubai-gold">
+              <span>★★★★★</span><span class="ml-2 text-gray-600">Luxury</span>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal active">
-                <div
-                    class="flex flex-col bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl">
-                    <div class="h-80 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                            alt="Fine Dining"
-                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-dubai-night">Fine Dining</h3>
-                        <p class="text-gray-600 mb-6">
-                            Experience world-class cuisine at celebrity chef restaurants and iconic venues like
-                            At.mosphere in
-                            Burj Khalifa and underwater dining at Al Mahara.
-                        </p>
-                        <button
-                            class="bg-dubai-gold hover:bg-opacity-90 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-                            Explore Restaurants
-                        </button>
-                    </div>
-                </div>
-
-                <div
-                    class="flex flex-col bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl">
-                    <div class="h-80 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                            alt="Local Cuisine"
-                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-dubai-night">Local Cuisine</h3>
-                        <p class="text-gray-600 mb-6">
-                            Discover authentic Emirati flavors and Arabic specialties at traditional restaurants and
-                            food
-                            festivals. Don't miss trying Al Machboos and Luqaimat.
-                        </p>
-                        <button
-                            class="bg-dubai-gold hover:bg-opacity-90 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-                            Discover Local Food
-                        </button>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Accommodation Section -->
-    <section id="accommodation" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 reveal active">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Luxury Accommodations</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Rest in style at Dubai's world-renowned hotels and resorts, offering unparalleled luxury and service
-                </p>
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Atlantis The Palm" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">Atlantis The Palm</h3>
+            <p class="text-gray-600 mb-4">Ocean-themed resort with water park access and underwater suites.</p>
+            <div class="flex items-center text-dubai-gold">
+              <span>★★★★★</span><span class="ml-2 text-gray-600">Family-Friendly</span>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal active">
-                <div
-                    class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                            alt="Burj Al Arab"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">
-                            Burj Al Arab</h3>
-                        <p class="text-gray-600 mb-4">
-                            The iconic sail-shaped 7-star hotel offering unparalleled luxury and service.
-                        </p>
-                        <div class="flex items-center text-dubai-gold">
-                            <span>★★★★★</span>
-                            <span class="ml-2 text-gray-600">Luxury</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                            alt="Atlantis The Palm"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">
-                            Atlantis The Palm</h3>
-                        <p class="text-gray-600 mb-4">
-                            Ocean-themed resort with water park access and underwater suites.
-                        </p>
-                        <div class="flex items-center text-dubai-gold">
-                            <span>★★★★★</span>
-                            <span class="ml-2 text-gray-600">Family-Friendly</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                            alt="Armani Hotel"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-8">
-                        <h3
-                            class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">
-                            Armani Hotel</h3>
-                        <p class="text-gray-600 mb-4">
-                            Sophisticated elegance in the heart of Downtown Dubai inside Burj Khalifa.
-                        </p>
-                        <div class="flex items-center text-dubai-gold">
-                            <span>★★★★★</span>
-                            <span class="ml-2 text-gray-600">Designer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 reveal active">
-                <h2 class="text-4xl font-bold mb-4 text-gradient">Top Asked Questions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Find answers to the most common questions about visiting Dubai
-                </p>
+        <div class="group bg-white rounded-xl overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Armani Hotel" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          </div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold mb-3 text-dubai-night group-hover:text-dubai-gold transition-colors">Armani Hotel</h3>
+            <p class="text-gray-600 mb-4">Sophisticated elegance in the heart of Downtown Dubai inside Burj Khalifa.</p>
+            <div class="flex items-center text-dubai-gold">
+              <span>★★★★★</span><span class="ml-2 text-gray-600">Designer</span>
             </div>
-
-            <div class="max-w-3xl mx-auto reveal active" id="accordion-collapse" data-accordion="collapse">
-                <div class="space-y-6" id="faq-container">
-                    <!-- FAQs will be populated by JavaScript -->
-                    <div class="mb-4 border-b border-gray-200 pb-4">
-                        <button
-                            class="faq-toggle flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-dubai-gold transition-colors"
-                            data-index="0">
-                            <span>What are the best times to visit Dubai?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 faq-icon" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="faq-answer mt-2 text-gray-600 hidden">The best time to visit Dubai is from November
-                            to March when the weather is pleasant with temperatures ranging from 24°C to 35°C. Summer
-                            months (June to September) can be extremely hot with temperatures exceeding 40°C.</div>
-                    </div>
-                    <div class="mb-4 border-b border-gray-200 pb-4">
-                        <button
-                            class="faq-toggle flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-dubai-gold transition-colors"
-                            data-index="1">
-                            <span>Do I need a visa to visit Dubai?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 faq-icon" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="faq-answer mt-2 text-gray-600 hidden">Visa requirements depend on your nationality.
-                            Citizens of many countries including the US, UK, EU, Australia, and others can get a visa on
-                            arrival. It's best to check the official UAE government website for the most current
-                            information.</div>
-                    </div>
-                    <div class="mb-4 border-b border-gray-200 pb-4">
-                        <button
-                            class="faq-toggle flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-dubai-gold transition-colors"
-                            data-index="2">
-                            <span>What are the top luxury hotels in Dubai?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 faq-icon" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="faq-answer mt-2 text-gray-600 hidden">Dubai is known for its luxury accommodations.
-                            Top hotels include Burj Al Arab, Atlantis The Palm, One&amp;Only Royal Mirage, Armani Hotel
-                            Dubai, and Four Seasons Resort Dubai at Jumeirah Beach.</div>
-                    </div>
-                    <div class="mb-4 border-b border-gray-200 pb-4">
-                        <button
-                            class="faq-toggle flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-dubai-gold transition-colors"
-                            data-index="3">
-                            <span>How can I experience the desert in Dubai?</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 faq-icon" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="faq-answer mt-2 text-gray-600 hidden">Desert safaris are a popular way to experience
-                            Dubai's desert. These typically include dune bashing, camel riding, sandboarding, and a BBQ
-                            dinner with entertainment. Many tour operators offer half-day or full-day desert
-                            experiences.</div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-12">
-                    <p class="text-gray-600 mb-6 text-lg">Have more questions? Our AI travel assistant can help!</p>
-                    <button id="open-chat-btn"
-                        class="bg-dubai-gold hover:bg-opacity-90 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg pulse-animation">
-                        Chat with our AI Assistant
-                    </button>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-<!--Start of TrustYou Agent Script-->
-<script type="text/javascript">
-  (function(){
-    const tyId = 'ty__agent_src-setup';
-    const el = document.createElement('script');
-    const root = document.getElementsByTagName('script')[0];
-    el.id = tyId;
-    el.src = 'https://guest.agent.trustyou.com/embed/a_o0Vx7KnfK8gn';
+  <!-- FAQ Section (Flowbite Accordion) -->
+  <section id="faq" class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16 reveal active">
+        <h2 class="text-4xl font-bold mb-4 text-gradient">Top Asked Questions</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Find answers to the most common questions about visiting Dubai</p>
+      </div>
 
-    el.setAttribute('crossorigin', 'anonymous');
-    if(!document.getElementById(tyId)) {
-      root.parentNode.insertBefore(el, root);
+      <div class="max-w-3xl mx-auto reveal active" id="accordion-collapse" data-accordion="collapse">
+        <!-- Q1 -->
+        <h3 id="q1-heading">
+          <button type="button" class="flex w-full items-center justify-between py-5 font-semibold text-left text-gray-800 border-b border-gray-200 hover:text-dubai-gold transition-colors"
+            data-accordion-target="#q1-body" aria-expanded="false" aria-controls="q1-body">
+            <span>What are the best times to visit Dubai?</span>
+            <svg data-accordion-icon class="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div id="q1-body" class="hidden" aria-labelledby="q1-heading">
+          <div class="py-5 border-b border-gray-200 text-gray-700 leading-relaxed">
+            The best time to visit Dubai is from <strong>November to March</strong> (pleasant weather, outdoor events). Summer (<strong>June–September</strong>) is extremely hot but can offer better hotel deals.
+            <div class="mt-4">
+              <button class="text-dubai-gold hover:text-dubai-blue font-medium" data-agent-prompt="Plan my Dubai dates: I prefer pleasant weather and outdoor events">Ask the AI to pick dates →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <h3 id="q2-heading">
+          <button type="button" class="flex w-full items-center justify-between py-5 font-semibold text-left text-gray-800 border-b border-gray-200 hover:text-dubai-gold transition-colors"
+            data-accordion-target="#q2-body" aria-expanded="false" aria-controls="q2-body">
+            <span>Do I need a visa to visit Dubai?</span>
+            <svg data-accordion-icon class="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div id="q2-body" class="hidden" aria-labelledby="q2-heading">
+          <div class="py-5 border-b border-gray-200 text-gray-700 leading-relaxed">
+            Visa requirements depend on your nationality. Many travelers (EU/UK/US/AUS and others) are eligible for <strong>visa on arrival</strong>. Always verify on official UAE sources.
+            <div class="mt-4">
+              <button class="text-dubai-gold hover:text-dubai-blue font-medium" data-agent-prompt="Check Dubai visa requirements for a [YOUR NATIONALITY] passport">Ask the AI about my visa →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <h3 id="q3-heading">
+          <button type="button" class="flex w-full items-center justify-between py-5 font-semibold text-left text-gray-800 border-b border-gray-200 hover:text-dubai-gold transition-colors"
+            data-accordion-target="#q3-body" aria-expanded="false" aria-controls="q3-body">
+            <span>What are the top luxury hotels in Dubai?</span>
+            <svg data-accordion-icon class="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div id="q3-body" class="hidden" aria-labelledby="q3-heading">
+          <div class="py-5 border-b border-gray-200 text-gray-700 leading-relaxed">
+            Standouts include <strong>Burj Al Arab</strong>, <strong>Atlantis The Palm</strong>, <strong>One&amp;Only Royal Mirage</strong>, <strong>Armani Hotel Dubai</strong>, and <strong>Four Seasons Resort Jumeirah</strong>.
+            <div class="mt-4">
+              <button class="text-dubai-gold hover:text-dubai-blue font-medium" data-agent-prompt="Recommend Dubai luxury hotels by vibe and budget">Find my luxury match →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <h3 id="q4-heading">
+          <button type="button" class="flex w-full items-center justify-between py-5 font-semibold text-left text-gray-800 border-b border-gray-200 hover:text-dubai-gold transition-colors"
+            data-accordion-target="#q4-body" aria-expanded="false" aria-controls="q4-body">
+            <span>How can I experience the desert in Dubai?</span>
+            <svg data-accordion-icon class="w-5 h-5 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </h3>
+        <div id="q4-body" class="hidden" aria-labelledby="q4-heading">
+          <div class="py-5 border-b border-gray-200 text-gray-700 leading-relaxed">
+            Choose an evening safari (cooler, live shows) or sunrise (soft light, tranquil dunes). Options: dune bashing, camel rides, sandboarding, stargazing.
+            <div class="mt-4">
+              <button class="text-dubai-gold hover:text-dubai-blue font-medium" data-agent-prompt="Compare evening vs sunrise desert safari in Dubai">Compare safari options →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-6 text-lg">Have more questions? Our AI travel assistant can help!</p>
+          <button id="open-chat-btn" class="bg-dubai-gold hover:bg-opacity-90 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg pulse-animation" data-agent-prompt="Hello! I want help planning my Dubai trip.">Chat with our AI Assistant</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mount point required for embedded mode -->
+  <div id="ty__agent"></div>
+
+  <!-- TrustYou Agent Script -->
+  <script type="text/javascript">
+    (function(){
+      const tyId = 'ty__agent_src-setup';
+      const el = document.createElement('script');
+      const root = document.getElementsByTagName('script')[0];
+      el.id = tyId;
+      el.src = 'https://guest.agent.trustyou.com/embed/a_o0Vx7KnfK8gn';
+      el.setAttribute('crossorigin', 'anonymous');
+      if(!document.getElementById(tyId)) {
+        root.parentNode.insertBefore(el, root);
+      }
+    })();
+  </script>
+
+  <!-- Flowbite JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+  <!-- Robust chat wiring (deep shadow DOM + iframe fallback) -->
+  <script>
+    /* ----------------- Shadow DOM + iFrame utils ----------------- */
+    function deepQueryAll(root, sel) {
+      const out = [];
+      const walk = (node) => {
+        if (!node) return;
+        if (node.querySelectorAll) { try { out.push(...node.querySelectorAll(sel)); } catch(_){} }
+        if (node.shadowRoot) walk(node.shadowRoot);
+        if (node.children) for (const c of node.children) walk(c);
+      };
+      walk(root);
+      return out;
     }
-  })();
-</script>
-<!--End of TrustYou Agent Script-->
+    function deepQuery(root, sel) { const m = deepQueryAll(root, sel); return m[0] || null; }
 
-<script>
-  function simpleChatOpen(){
-  const chat = document.querySelector('[title="Open chat"]');
-  if (chatButton) {
-  document.querySelector('button[title="Open chat"]').click();
-  } else {
-  console.warn('Button with title "Open chat" not found.');
-  }
-  }
-</script>
+    function waitUntil(pred, timeout=20000, step=60) {
+      return new Promise((res, rej) => {
+        const t0 = performance.now();
+        (function poll(){
+          try { const v = pred(); if (v) return res(v); } catch(_){}
+          if (performance.now() - t0 > timeout) return rej(new Error('Timeout waiting for condition'));
+          setTimeout(poll, step);
+        })();
+      });
+    }
 
+    const hostId = 'ty__agent';
+    const hostEl = () => document.getElementById(hostId);
+    const rootEl = () => (hostEl()?.shadowRoot || hostEl() || document);
+
+    async function ensureAgentButton() {
+      return waitUntil(() => {
+        const r = rootEl();
+        return r && (deepQuery(r, 'button[title="Open chat"], button[aria-label="Open chat"], button'));
+      }, 25000);
+    }
+
+    async function openChat() {
+      const r = rootEl();
+      const openBtn = deepQuery(r, 'button[title="Open chat"], button[aria-label="Open chat"], button');
+      if (openBtn) openBtn.click();
+      // wait for either an input OR an iframe that likely hosts the composer
+      await waitUntil(() => {
+        const rr = rootEl();
+        const input = deepQuery(rr, 'textarea, input[type="text"], [role="textbox"], [contenteditable="true"]');
+        const iframe = deepQuery(rr, 'iframe');
+        return input || iframe;
+      }, 20000);
+    }
+
+    function findComposerInSameDOM() {
+      const r = rootEl();
+      const input =
+        deepQuery(r, 'textarea') ||
+        deepQuery(r, 'input[type="text"]') ||
+        deepQuery(r, '[role="textbox"]') ||
+        deepQuery(r, '[contenteditable="true"]');
+
+      if (!input) return { input: null, send: null, iframe: deepQuery(r, 'iframe') || null };
+
+      let scope = input.closest('form, footer, div, section') || r;
+      let send =
+        deepQuery(scope, 'button[title="Send"], button[aria-label="Send"], [role="button"][aria-label="Send"], button[type="submit"]') ||
+        deepQuery(r,     'button[title="Send"], button[aria-label="Send"], [role="button"][aria-label="Send"], button[type="submit"]');
+
+      if (!send) {
+        const btns = deepQueryAll(r, 'button');
+        send = btns.find(b => (b.textContent || '').trim().toLowerCase() === 'send') || null;
+      }
+      return { input, send, iframe: null };
+    }
+
+    function setInputValue(el, value) {
+      if (!el) return;
+      el.focus({ preventScroll: true });
+      const isEditable = el.getAttribute && (el.getAttribute('contenteditable') === 'true' || el.getAttribute('role') === 'textbox');
+      if (isEditable) {
+        el.textContent = value;
+      } else if (el.tagName === 'TEXTAREA' || (el.tagName === 'INPUT' && el.type === 'text')) {
+        const proto = Object.getPrototypeOf(el);
+        const setter = Object.getOwnPropertyDescriptor(proto, 'value')?.set;
+        setter ? setter.call(el, value) : (el.value = value);
+      } else {
+        el.textContent = value;
+      }
+      el.dispatchEvent(new Event('input',  { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    function showToast(msg) {
+      let t = document.getElementById('agent-toast');
+      if (!t) {
+        t = document.createElement('div');
+        t.id = 'agent-toast';
+        t.style.position = 'fixed';
+        t.style.bottom = '24px';
+        t.style.left = '50%';
+        t.style.transform = 'translateX(-50%)';
+        t.style.padding = '10px 14px';
+        t.style.background = 'rgba(0,0,0,0.8)';
+        t.style.color = '#fff';
+        t.style.borderRadius = '10px';
+        t.style.fontFamily = 'Poppins, sans-serif';
+        t.style.fontSize = '14px';
+        t.style.zIndex = '99999';
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.opacity = '1';
+      setTimeout(() => { t.style.transition = 'opacity .4s'; t.style.opacity = '0'; }, 2200);
+    }
+
+    async function sendPromptToAgent(promptText) {
+      try {
+        await ensureAgentButton();
+        await openChat();
+
+        // small delay for animation settle
+        await new Promise(r => setTimeout(r, 80));
+
+        const { input, send, iframe } = findComposerInSameDOM();
+
+        if (iframe && !input) {
+          // Cross-origin iframe scenario -> cannot access its DOM. Use clipboard + UX hint.
+          try { await navigator.clipboard.writeText(promptText); } catch(_) {}
+          // Try to bring focus into the widget (click somewhere inside host)
+          const r = rootEl();
+          const clickable = deepQuery(r, 'textarea, [role="textbox"], [contenteditable="true"], button, div');
+          clickable?.click();
+          showToast('Prompt copied. Press ⌘V / Ctrl+V inside the chat to paste, then Send.');
+          return;
+        }
+
+        if (!input) {
+          showToast('Chat ready, but input not found.');
+          return;
+        }
+
+        setInputValue(input, promptText);
+
+        if (send) {
+          send.click();
+        } else {
+          const form = input.closest('form');
+          if (form) {
+            form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+          } else {
+            // fallback: simulate Enter on the input
+            input.dispatchEvent(new KeyboardEvent('keydown',  { key: 'Enter', code: 'Enter', bubbles: true }));
+            input.dispatchEvent(new KeyboardEvent('keypress', { key: 'Enter', code: 'Enter', bubbles: true }));
+            input.dispatchEvent(new KeyboardEvent('keyup',    { key: 'Enter', code: 'Enter', bubbles: true }));
+          }
+        }
+      } catch (e) {
+        console.warn('Could not send prompt to agent:', e);
+        showToast('Could not auto-send to chat.');
+      }
+    }
+
+    // Event delegation: any element with data-agent-prompt will trigger
+    document.addEventListener('click', (e) => {
+      const el = e.target.closest('[data-agent-prompt]');
+      if (!el) return;
+      e.preventDefault();
+      const text = el.getAttribute('data-agent-prompt') || 'Hello';
+      sendPromptToAgent(text);
+    });
+
+    // Keep your previous API
+    window.simpleChatOpen = function(){ sendPromptToAgent('Hello!'); };
+  </script>
 </body>
-
 </html>
